@@ -1,0 +1,121 @@
+*{
+    margin:0;
+    padding: 0;
+	}
+
+li{ list-style: none; 
+     }
+a{
+	text-decoration: none;
+}
+
+ .clearfix:after {  content: "."; display: block; height: 0; clear: both; visibility: hidden;  } 
+
+
+body{
+	background: #ea3c21;
+	
+}	
+.container{
+	width: 1140px;
+	height: 500px;
+	position: relative;
+	margin:0 auto;
+	margin-top: 300px;
+	box-shadow: 0px 1px 16px rgba(0 , 0 , 0, .4);
+}
+
+.nav{ 
+   height: 62px;
+   width: 50%;
+   position: relative;
+   margin:  0 auto;
+   top:-32px;
+
+
+ }
+.nav-shadow{
+	/*everything here (including before after) is to control a(2) rotated shadow bar behind the nav*/
+	/*shadow class (以及 before after)里面的所有都是为了控制藏在导航后面的两个阴影,让他么转出斜度 所以可以看见倾斜的阴影.*/
+	z-index: -1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+
+
+}
+
+.nav-shadow:before, .nav-shadow:after
+{
+	/*left shadow*/
+	/*左半个阴影*/
+	z-index: -1;
+	content: "before";
+	position: absolute;
+	top: 38px;
+	left: 15px;
+	right: auto;
+	height: 15px;
+	width: 60%;
+	box-shadow: 0 15px 10px #9f2916;
+	transform: rotate(-3deg);
+    /*below are for different browsers to use, ignore them when you study the code*/
+    /*以下是为了浏览器兼容的,不用管它*/
+	-webkit-box-shadow: 0 15px 10px #9f2916;
+	-moz-box-shadow: 0 15px 10px #9f2916;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	background-color: #9f2916;
+}
+
+.nav-shadow:after{
+	content: "after";
+	right: 15px;
+	left: auto;
+	transform: rotate(3deg);
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+}
+
+.nav-bar{
+	position: absolute;
+	/*padding:0 60px;*/
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	
+	background:url('../images/nav.png') no-repeat;
+    background-size: 100% 100%;}
+
+.nav ul{ 
+	
+	position: absolute;
+	padding: 0 40px;
+}
+.nav li{
+	float: left;
+
+}
+.nav li a{
+	/*everything in here is to control the display of each list and text*/
+	/*这里的一切都是控制每个单元格的样子 以及文字的显示的*/
+	line-height: 62px;
+	display: inline-block;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	color: #ea3c21;
+	/*change padding between list if you 
+	       *add/delete new list 
+	       *change the contant which affact the length of each list
+	       *change the lenght of the whole nav bar*/
+	/*如果你改了单元格数量,文字长度,导航长度,记得要跟着调整单元格的padding值,不然盒子排列会不好看,或者被破坏*/
+	padding: 0 25px;
+}
+.nav li a:hover{
+	background-color: #efefef;
+}

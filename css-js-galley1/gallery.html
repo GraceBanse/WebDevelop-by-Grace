@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+   <link rel="stylesheet" href="lib/Bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+	<meta charset="UTF-8">
+	<title>Grace</title>
+</head>
+<body>
+
+<style>
+*{
+	margin:0;
+	padding: 0;
+}
+
+body{
+padding: 80px;
+}
+
+#imagegallery{
+	width: 600px;
+
+}
+
+#imagegallery .TopSmallImg img{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+
+#imagegallery .bottomBigImg img{
+	width: 100%;
+}
+
+#imagegallery>.container{
+	width: 100%;
+
+}
+
+</style>
+<!-- ++++++++++++++++ HTML ++++++++++++++++++++ -->
+<div id="imagegallery">
+	<div class="container">
+		<div class="TopSmallImg row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+				<a href="images/1-big.jpg"><img src="images/1.jpg"></a>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+				<a href="images/2-big.jpg"><img src="images/2.jpg"></a>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+			    <a href="images/3-big.jpg"><img src="images/3.jpg"></a>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+				<a href="images/4-big.jpg"><img src="images/4.jpg"></a>
+			</div>
+		</div><!-- /TopSmallImg -->
+		<div class="bottomBigImg row text-center" >
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			    <img src="images/1-big.jpg" id="showCase">
+			</div>
+		</div><!-- /bottomBigImg -->
+	</div><!-- /container -->
+</div><!-- /hold -->
+
+<script>
+	function my$(id){return document.getElementById(id);}
+    var aObj= my$("imagegallery").getElementsByTagName("a");
+    for(var i=0; i<aObj.length; i++){
+    	aObj[i].onclick=function(){
+    		my$("showCase").src= this.href;
+    		return false;
+
+    	};
+    }
+
+
+</script>
+
+</body>
+</html>
